@@ -63,12 +63,11 @@ Permisos gestionados con **Spatie Laravel Permission**.
 
 ## 📸 Capturas
 
-<!-- Agrega tus imágenes en docs/screenshots/ y descomenta las líneas de abajo -->
-<!--
 ![Login](docs/screenshots/login.png)
+
 ![A negociar](docs/screenshots/a-negociar.png)
+
 ![Dashboard de gerencia](docs/screenshots/dashboard.png)
--->
 
 ## 🚀 Instalación (Docker)
 
