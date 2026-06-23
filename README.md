@@ -1,59 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Nexo CRM
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**CRM de call center para venta B2B de telecomunicaciones.** Gestiona el ciclo completo de una venta corporativa: desde la captación del lead hasta la activación del servicio, con roles diferenciados, dashboards en tiempo real y un pipeline de validación de varias etapas.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?logo=php&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB-11.4-003545?logo=mariadb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?logo=alpinedotjs&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-73%20passing-success)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Proyecto personal de portafolio que modela el flujo operativo real de un call center de ventas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔄 El pipeline de venta
 
-## Learning Laravel
+```
+Lead → Contacto → Negociación → Acuerdo → Validación Supervisor → Mesa de Control → Entrega / Activación
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Cada etapa la opera un rol distinto, con su propia bandeja, reglas de negocio y métricas.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Características principales
 
-## Laravel Sponsors
+- **Reparto automático de leads** — bolsa de clientes por campaña con asignación 1‑a‑1, liberación automática por no‑contacto y deshabilitación de un lead tras pasar por 3 ejecutivos sin éxito.
+- **Módulo "A negociar"** — speech de venta guiado por tipo de cliente (accesible / intermedio / difícil), registro de gestiones y armado de ofertas (portabilidad y alta nueva, producto móvil y/o fijo).
+- **Acuerdos** — captura del acuerdo aceptado con adjuntos del cliente (contratos, DNI) almacenados de forma **privada** y servidos solo con autorización.
+- **Validación en cascada** — Supervisor valida → Mesa de Control gestiona SISAC, activaciones y entrega.
+- **Dashboards en tiempo real** — Gerencia y Supervisor con metas diarias/semanales, TMO en vivo y monitoreo de actividad de los ejecutivos.
+- **Cobertura territorial** — mapas interactivos (Leaflet) con configuración por provincia.
+- **Promociones** — gestión de PDFs y nombres de promociones con precios.
+- **Mensajería interna** entre roles, módulos de **RRHH** (formularios) y **MKT** (frases).
+- **Actualización en vivo sin recargar** — endpoints de *polling* (`*/pulse`) que devuelven JSON.
+- **Personalización por usuario** — tema de color configurable y modo claro/oscuro.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 👥 Roles del sistema (9)
 
-### Premium Partners
+| Rol | Pantalla principal |
+|---|---|
+| Ejecutivo | A negociar |
+| Supervisor | Validación de acuerdos |
+| Mesa de Control | Validación / activaciones |
+| Gerencia | Dashboard |
+| Postventa | Gestión postventa |
+| RRHH | Formularios |
+| MKT | Frases |
+| Administrador de promociones | Promociones |
+| Administrador | Panel admin |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Permisos gestionados con **Spatie Laravel Permission**.
 
-## Contributing
+## 🛠️ Stack tecnológico
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Backend:** Laravel 12 · PHP 8.4
+- **Base de datos:** MariaDB 11.4 · Redis (caché)
+- **Frontend:** Blade · Alpine.js · Tailwind CSS · Vite
+- **Mapas:** Leaflet
+- **Infraestructura:** Docker (nginx · php‑fpm · mariadb · redis)
+- **Calidad:** PHPUnit (73 tests feature) · Laravel Pint · GitHub Actions (CI)
 
-## Code of Conduct
+## 📸 Capturas
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<!-- Agrega tus imágenes en docs/screenshots/ y descomenta las líneas de abajo -->
+<!--
+![Login](docs/screenshots/login.png)
+![A negociar](docs/screenshots/a-negociar.png)
+![Dashboard de gerencia](docs/screenshots/dashboard.png)
+-->
 
-## Security Vulnerabilities
+## 🚀 Instalación (Docker)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+> Requisito: solo **Docker** y **Docker Compose**. No necesitas PHP ni Node instalados en tu máquina.
 
-## License
+```bash
+# 1. Clonar
+git clone https://github.com/JEHL22/nexo-crm.git
+cd nexo-crm
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 2. Variables de entorno
+cp .env.example .env
+#   En .env, para desarrollo local ajusta:
+#     APP_ENV=local
+#     APP_DEBUG=true
+#     SEED_DEMO_USERS=true   (crea los usuarios de demo)
+
+# 3. Levantar contenedores (nginx, php-fpm, mariadb, redis)
+docker compose up -d
+
+# 4. Dependencias y key de la app
+docker compose exec app composer install
+docker compose exec app php artisan key:generate
+
+# 5. Migraciones + datos base (roles, campañas, usuarios demo)
+docker compose exec app php artisan migrate --seed
+
+# 6. Datos de demo para "A negociar" (20 leads + equipo)
+docker compose exec app php artisan db:seed --class=DemoLeadsSeeder
+
+# 7. Compilar el frontend
+docker compose run --rm node npm install
+docker compose run --rm node npm run build
+```
+
+App disponible en **http://localhost:8080**
+
+## 🔑 Usuarios de demo
+
+| Rol | Email | Contraseña |
+|---|---|---|
+| Administrador | `admin@nexo.local` | `Nexo` |
+| Gerencia | `gerencia@nexo.local` | `Nexo` |
+| Supervisor | `supervisor@nexo.local` | `Nexo` |
+| Ejecutivo | `ejecutivo@nexo.local` | `Nexo` |
+| Postventa | `postventa@nexo.local` | `Nexo` |
+| Mesa de Control | `mesa@nexo.local` | `Nexo` |
+
+## 🧪 Tests
+
+```bash
+docker compose exec app php artisan test
+```
+
+La suite (sqlite en memoria) corre también en **GitHub Actions** en cada push/PR.
+
+## 🧱 Notas de arquitectura
+
+- **Escalabilidad:** las listas grandes cargan solo con conteos/agregados; el detalle se pide on‑demand por AJAX (evita N+1 con batching).
+- **Convenciones:** validación inline en controladores, autorización por rol, operaciones multi‑tabla en transacciones, lógica compartida en clases estáticas (`app/Support/`).
+- **Migraciones idempotentes** para soportar entornos divergentes.
+- **Tiempo real sin websockets:** polling ligero vía endpoints `*/pulse` con *throttle*.
+
+---
+
+*Construido con Laravel + Docker.*
