@@ -1,0 +1,4 @@
+interface:
+  display_name: "CRM Backend"
+  short_description: "Backend alineado al CRM Forza real"
+  default_prompt: "Usa $crm-backend para resolver esta tarea siguiendo los controladores, estados, dashboards, recordatorios y flujos reales de CRM Forza."

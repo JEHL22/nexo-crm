@@ -1,0 +1,3 @@
+*.sqlite*
+*.sql
+crm_forza_buckup.sql

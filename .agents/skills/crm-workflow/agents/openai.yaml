@@ -1,0 +1,4 @@
+interface:
+  display_name: "CRM Workflow"
+  short_description: "Flujo real y coherente del CRM Forza"
+  default_prompt: "Usa $crm-workflow para resolver esta tarea preservando estados, roles, recordatorios, dashboards y handoff reales dentro de CRM Forza."

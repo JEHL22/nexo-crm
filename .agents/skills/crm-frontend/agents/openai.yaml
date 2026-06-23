@@ -1,0 +1,4 @@
+interface:
+  display_name: "CRM Frontend"
+  short_description: "UI compacta y coherente con CRM Forza"
+  default_prompt: "Usa $crm-frontend para resolver esta tarea manteniendo la UI real de CRM Forza: Blade, Tailwind, dashboards compactos, polling, modales y layout por rol."
